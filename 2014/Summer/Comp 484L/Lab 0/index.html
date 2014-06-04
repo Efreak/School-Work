@@ -1,0 +1,181 @@
+<html>
+	<head>
+		<link href='//fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
+		<title>Daniel Strom</title>
+		<style type="text/css">
+			body { color: #fff; font-family: 'Philosopher', sans-serif; font-size: 17px;}
+			a { color:#999; text-decoration:none; }
+			a:hover { color: #fff; }
+			.left, .right { margin-left: 25px; padding-bottom: 5px; margin-bottom: 10px; }
+			.body h2 { margin-top: 0; text-align:center; }
+			.clear { clear:both; }
+			#name, #email { height: 19px }
+			.field { width: 30%; float:left; margin-bottom: 5px; }
+			.label { width: 15%; line-height: 39px; float:left; }
+			textarea { padding-top: 5px; padding-bottom: 5px; width: 100%; }
+			.field, textarea, .button, a { transition: all .5s ease-in-out; -moz-transition: all .5s ease-in-out; -webkit-transition: all .5s ease-in-out; }
+			.field, textarea { padding-left: 5px; background-color:#000708; border-color: #044f59; border-style:solid;
+				color: #999; padding-right:5px; border-radius: 10px; margin-top: 8px; border-width: 2px; outline:none; }
+			.field:focus, textarea:focus { border-color: 067786; outline: none; }
+			.field:hover, textarea:hover { border-color: #054072; outline:none;}
+			.button { margin-top: 8px; background-color:#044f59; border-color: rgba(0,0,0,0); border-style:solid;
+				color: #fff; padding-left: 5px; padding-right:5px; box-shadow: 0 0 2px #044f59; border-radius: 10px; outline:0}
+			.button:focus { margin-top: 8px; background-color:#067786; border-color: rgba(0,0,0,0); border-style:solid;
+				color: #fff; padding-left: 5px; padding-right:5px; box-shadow: 0 0 2px #067786; border-radius: 10px; outline:0}
+			.button:hover { margin-top: 8px; background-color:#054072; border-color: rgba(0,0,0,0); border-style:solid;
+				color: #fff; padding-left: 5px; padding-right:5px; box-shadow: 0 0 2px #054072; border-radius: 10px; outline:0}
+			#header h1 { text-align:center; margin:5px 0 0 0;}
+			#headerimg { margin-left:auto; margin-right:auto;
+				background-image: url('//i.imgur.com/HCz4Fkp.png'); border-radius: 15px;
+			}
+			h1 {font-size:34px;}
+			h2 {font-size:26px; line-height: 28px;}
+			table { width: 100%; }
+			td img { max-width: 134px; }
+			
+
+			@media (min-width: 600px) and (max-width: 1000px) { /* style-med */
+				#wrapper { width: 550px; }
+				#header { width: 325px; }
+				#headerimg { width:325px; height:225px; }
+				.left, .right { width: 500px; }
+				.field, textarea { font-size: 15px; }
+				input.button { font-size: 15px; line-height: 15px;}
+				th:nth-child(3n) { width: 100px; }
+				td:nth-child(3n) { width: 100px; }
+				td img {width: 100px; }
+			}
+
+			
+			@media (max-width: 1000px), { /*style-med, style-small*/
+				body { background-color:#000708; }
+				#wrapper { margin: 0px auto 5px auto; }
+				.body, #header { box-shadow: inset 0 0 15px #055f6b, 0 0 15px #055f6b, inset 0 0 5px #055f6b,
+					0 0 5px #055f6b; border-radius: 25px; padding: 15px 20px 11px 20px; margin-top: 25px; background-color: #000e10; }
+				#header { margin-left:auto; margin-right:auto; }
+				.left, .right { float:left; }
+				.mediaseparater { clear:both; }
+				.label.name  { width: 27%; }
+				.label.email { width: 27%; }
+				.field.name  { width: 73%; }
+				.field.email { width: 73%; }
+				input.button { width: 48%;}
+				.button.clear { margin-left: 14px; }
+				#header h1 { font-size:20px; }
+				h2 { font-size: 18px; }
+				.bigonly { display:none; }
+				table * { text-align:center; }
+			}
+
+
+			@media (max-width: 599px) { /* style-small */
+				body { min-width: 340px; }
+				#wrapper { width: 330px; }
+				#header { width: 200px; }
+				#headerimg { width:200px; height:139px; background-size: 100% 100%; }
+				.left, .right { width: 280px; }
+				table { width: 100%; }
+				.field, textarea { font-size: 17px; }
+				input.button { font-size: 17px; line-height: 17px;}
+				.button.clear { margin-left: 5px; }
+				th:nth-child(3n) { width: 55px; }
+				td:nth-child(3n) { width: 55px; }
+				td img {width: 55px; }
+			}
+
+
+			@media (min-width: 1000px) { /* style-big */
+				body { background-color: #000; min-width: 1125px; }
+				#wrapper { width: 1100px; margin-left:auto; margin-right:auto; background-color:#000708; padding: 0px 0px 10px 0px; border-radius: 25px;
+					box-shadow: inset 0 0 15px #000, 0 0 15px #000, inset 0 0 5px #000, inset 0 0 15px #000, 0 0 15px #000, inset 0 0 5px #000, inset 0 0 15px #000, 0 0 15px #000, inset 0 0 5px #000, 0 0 5px #000;}
+				.body, #header { box-shadow: inset 0 0 15px #055f6b, 0 0 15px #055f6b, inset 0 0 5px #055f6b, 0 0 5px #055f6b;
+					border-radius: 25px; padding: 15px 20px 8px 20px; margin-top: 19.5px; background-color: #000e10; margin-bottom: 19.5px;}
+				#header { margin-top: 15px; }
+				.bodyleft { padding: 20px 20px 20px 20px; }
+				#header { width: 325px; margin-left:auto; margin-right:auto; }
+				#headerimg { width:325px; height:225px; }
+				.left, .right { float:left; }
+				.left  { width: 365px; }
+				.right { width: 665px;}
+				.label.name  { width: 10%; }
+				.label.email { width: 10%; margin-left: 2%; }
+				.field.name  { width: 27%; }
+				.field.email { width: 27%; }
+				input.button { width: 10%; margin-left: 1.5%;}
+				form { margin-bottom: 12px; }
+				.media-separater { display:none; }
+				th:nth-child(3n) { width: 135px; }
+				td:nth-child(3n) { width: 135px; }
+			}
+			#footer { text-align: center; }
+			#footer a {font-size: 10px; color: #666; line-height: 10px; transition: all .5s ease-in-out;
+				-moz-transition: all .5s ease-in-out; -webkit-transition: all .5s ease-in-out;}
+			#footer a:hover {color: #999;}
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="header">
+				<div id="headerimg"></div>
+				<h1>Daniel Strom</h1>
+			</div>
+			<div class="left" id="websites">
+				<div class="body websites">
+					<h2>Favorite Websites</h2>
+					<table>
+						<tr><th class="link">WEBSITES</th><th>MUSIC</th><th>MOVIES</th></tr>
+						<tr><td class="link"><a href="http://www.github.com">GitHub</a></td><td class="link"><a href="http://paulsimon.com">Paul Simon</a></td>
+							<td><a href="http://www.imdb.com/title/tt0114694/"><img src="//i.imgur.com/TryYwgi.jpg"></a></td></tr>
+						<tr><td class="link"><a href="http://www.sourceforge.net">Source Forge</a></td><td class="link"><a href="http://peterpaulandmary.com">Peter, Paul &amp; Mary</a></td>
+							<td><a href="http://www.imdb.com/title/tt0119698/"><img src="//i.imgur.com/cKRnJyo.jpg"></a></td></tr>
+						<tr><td class="link"><a href="http://www.steamcommunity.com">Steam</a></td><td class="link"><a href="http://thelumineers.com">The Lumineers</a></td>
+							<td><a href="http://www.imdb.com/title/tt0096283/"><img src="//i.imgur.com/wd3pE0c.jpg"></a></td></tr>
+						<tr><td class="link"><a href="http://www.nyanit.com">Nyan it</a></td><td class="link"><a href="">The Band</a></td>
+							<td><a href="http://www.imdb.com/title/tt0087544/"><img src="//i.imgur.com/wG6Ep3p.jpg"></a></td></tr>
+						<tr><td class="link"><a href="http://www.google.com">Google</a></td><td class="link"><a href="">Bob Dylan</a></td>
+							<td><a href="http://www.imdb.com/title/tt0116996/"><img src="//i.imgur.com/ts9ACKI.jpg"></a></td></tr>
+					</table>
+				</div>
+			</div>
+			<div class="right">
+				<div class="body" id="about">
+					<h2>About Me</h2>
+					<p>My name is Daniel Strom. I was born January 6, 1989. That makes me 24 years old, as of this writing.</p>
+					<p>I started attending CSUN in 2010 for the COMPSCI major, then switched to CIT. I hope to graduate after next year.</p>
+				</div>
+				<div class="body" id="classes">
+					<h2>Classes<span class="bigonly"> I Took in Fall 2013 and Spring 2014</span></h2>
+					<ul>
+						<li>Art</li>
+						<ul><li>Art 301</li></ul>
+						<li>Astronomy</li>
+						<ul><li>ASTR 352</li></ul>
+						<li>Geology</li>
+						<ul><li>GEOL 300</li></ul>
+						<li>Information Science</li>
+						<ul><li>IS 431</li>
+						<li>IS 451</li></ul>
+						<li>Math</li>
+						<ul><li>MATH 140</li></ul>
+					</ul>
+				</div>
+				<div class="body" id="contact">
+					<h2>Contact Me!</h2>
+					<form method="get" action="index.php">
+						<textarea rows="5"></textarea>
+						<label for="formname" class="label name">Name</label>
+						<input type="text" name="Name" id="formname"class="field name"></input>
+						<div class="mediaseparater"></div>
+						<label for="formemail" class="label email">Email</label>
+						<input type="text" name="email" id="formemail" class="field email"></input>
+						<div class="mediaseparater"></div>
+						<input type="submit" value="Submit" class="button submit">
+						<input type="reset" value="Clear" class="button clear">
+					</form>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div id="footer"><a href="mailto:daniel.strom.88@my.csun.edu">Daniel.Strom.88@my.csun.edu</a></div>
+	</body>
+</html>
